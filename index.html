@@ -1,241 +1,228 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trendyol </title>
+    <title>Inspired Webpage</title>
     <style>
-        /* Genel Stil */
+        :root {
+            --colorWhite: #fff;
+            --colorNeutralCool: #f3f1e7;
+            --colorGreenStarbucks: #1e3932;
+            --colorBlack: #000;
+            --colorTextBackground: #d4e9e2;
+            --textSize2: 1.4rem;
+            --lineHeightNormal: 1.5;
+            --space-3: 1.6rem;
+            --space-6: 4rem;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f6f6f6;
+            font-family: SoDoSans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            background-color: var(--colorWhite);
+            color: var(--colorBlack);
+            font-size: var(--textSize2);
+            line-height: var(--lineHeightNormal);
         }
 
         header {
-            background-color: #f27a1a; /* Trendyol Turuncusu */
-            padding: 20px 40px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            color: white;
-            font-size: 28px;
-            margin: 0;
-        }
-
-        .search-bar {
-            margin: 0 auto;
-            text-align: center;
-            flex-grow: 1;
-        }
-
-        .search-bar input {
-            width: 60%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .icon-row {
-            display: flex;
             align-items: center;
-            justify-content: space-between;
-            background-color: white;
-            padding: 10px 40px;
-            border-bottom: 1px solid #ddd;
+            padding: var(--space-3) var(--space-6);
+            background-color: var(--colorGreenStarbucks);
+            color: var(--colorWhite);
         }
 
-        .icon-row div {
-            margin-right: 20px;
-            cursor: pointer;
-            font-size: 14px;
+        header .logo {
+            font-size: 2rem;
+            font-weight: bold;
         }
 
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 20px 40px;
-            background-color: white;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .categories div {
-            margin-right: 20px;
-            cursor: pointer;
-            font-size: 14px;
-            color: #555;
-        }
-
-        main {
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        footer p {
+        nav ul {
+            list-style: none;
             margin: 0;
-            font-size: 14px;
+            padding: 0;
+            display: flex;
         }
 
-        /* Çerez Banner */
-        #cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #333;
-            color: white;
-            padding: 20px;
+        nav ul li {
+            margin-left: var(--space-3);
+        }
+
+        nav ul li a {
+            color: var(--colorWhite);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background-image: url('https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-96387.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--colorWhite);
+            font-size: 3.6rem;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: var(--space-6);
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 2.8rem;
+            color: var(--colorGreenStarbucks);
+        }
+
+        .content p {
+            font-size: 1.6rem;
+            margin: 2rem 0;
+        }
+
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-6);
+            padding: var(--space-6);
+        }
+
+        .column {
+            display: flex;
+            align-items: stretch;
+            background-color: var(--colorNeutralCool);
+            border-radius: 12px;
+            overflow: hidden;
             flex-direction: column;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        #cookie-banner button {
-            background-color: #f27a1a;
-            border: none;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 10px;
-            font-size: 14px;
+        @media (min-width: 768px) {
+            .columns {
+                grid-template-columns: 1fr;
+            }
+
+            .column {
+                flex-direction: row;
+            }
+
+            .column img {
+                flex: 1;
+                width: 100%;
+                max-width: 50%;
+                height: auto;
+                object-fit: cover;
+            }
+
+            .column .text {
+                flex: 1;
+                max-width: 50%;
+                padding: var(--space-3);
+                background-color: var(--colorTextBackground);
+                color: var(--colorBlack);
+                box-sizing: border-box;
+            }
         }
 
-        #cookie-banner button:hover {
-            background-color: #e66a0e;
+        .column img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
         }
 
-        #cookie-settings {
-            display: none;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            margin-top: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .column .text {
+            width: 100%;
+            padding: var(--space-3);
+            background-color: var(--colorTextBackground);
+            color: var(--colorBlack);
+            box-sizing: border-box;
         }
 
-        #cookie-settings p {
-            font-size: 14px;
-            margin-bottom: 10px;
+        .column .text h2 {
+            margin: 0 0 10px;
+            font-size: 2rem;
+            color: var(--colorGreenStarbucks);
         }
 
-        #cookie-settings label {
-            font-size: 14px;
-            display: block;
-            margin-bottom: 10px;
-            color: #333; /* Text color */
+        .column .text p {
+            margin: 0;
+            font-size: 1.4rem;
         }
 
-        #cookie-settings input[type="checkbox"] {
-            margin-right: 10px;
+        .footer {
+            background-color: var(--colorBlack);
+            color: var(--colorWhite);
+            padding: var(--space-6);
+            text-align: center;
         }
 
-        #site-content {
-            display: none;
-        }
-
-        #site-content.cookies-accepted {
-            display: block;
+        .footer a {
+            color: var(--colorGreenStarbucks);
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">My Inspired Website</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <h1>Trendyol </h1>
-    <div class="search-bar">
-        <input type="text" placeholder="Ara...">
+    <div class="hero">
+        Welcome to Our Website
     </div>
-</header>
 
-<div class="icon-row">
-    <div>Giriş Yap</div>
-    <div>Favorilerim</div>
-    <div>Sepetim</div>
-</div>
+    <div class="content">
+        <h1>Discover Our Offerings</h1>
+        <p>We provide high-quality products and services designed to delight you. Explore our menu and find your favorites!</p>
+    </div>
 
-<div class="categories">
-    <div>TÜM KATEGORİLER</div>
-    <div>Yeni</div>
-    <div>Kadın</div>
-    <div>Erkek</div>
-    <div>Anne & Çocuk</div>
-    <div>Ev & Yaşam</div>
-    <div>Supermarket</div>
-    <div>Kozmetik</div>
-    <div>Ayakkabı & Çanta</div>
-    <div>Elektronik</div>
-    <div>Yes, Satan</div>
-    <div>Flaş Ürünler</div>
-</div>
+    <div class="columns">
+        <div class="column">
+            <img src="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-96387.jpg" alt="Reward Tiers">
+            <div class="text">
+                <h2>Column 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="column">
+            <img src="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-96033.jpg" alt="Rewards Details">
+            <div class="text">
+                <h2>Column 2</h2>
+                <p>Quisque sit amet est et sapien ullamcorper pharetra.</p>
+            </div>
+        </div>
+        <div class="column">
+            <img src="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-95586.jpg" alt="Rewards Card">
+            <div class="text">
+                <h2>Column 3</h2>
+                <p>Vestibulum volutpat pretium libero, ut cursus arcu.</p>
+            </div>
+        </div>
+        <div class="column">
+            <img src="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-95387.jpg" alt="Bonus Stars">
+            <div class="text">
+                <h2>Column 4</h2>
+                <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
+            </div>
+        </div>
+    </div>
 
-<div id="site-content">
-    <main>
-        <p>Site içeriği burada görünecektir.</p>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Web Siteniz. Tüm hakları saklıdır.</p>
+    <footer class="footer">
+        <p>&copy; 2024 My Inspired Website. All rights reserved. <a href="#">Privacy Policy</a></p>
     </footer>
-</div>
-
-<div id="cookie-banner">
-    <p>Deneyiminizi geliştirmek için çerezleri kullanıyoruz. Lütfen tercihlerinizi seçin:</p>
-    <button onclick="acceptCookies()">Tümünü Kabul Et</button>
-    <button onclick="rejectCookies()">Tümünü Reddet</button>
-    <button onclick="toggleSettings()">Ayarlar</button>
-    <div id="cookie-settings">
-        <p>Çerezleri kişiselleştirin:</p>
-        <label><input type="checkbox"> Fonksiyonel Çerezler</label>
-        <label><input type="checkbox"> Analitik Çerezler</label>
-        <label><input type="checkbox"> Reklam Çerezleri</label>
-        <button onclick="saveSettings()">Kaydet</button>
-    </div>
-</div>
-
-<script>
-    function acceptCookies() {
-        document.getElementById('site-content').classList.add('cookies-accepted');
-        document.getElementById('cookie-banner').style.display = 'none';
-    }
-
-    function rejectCookies() {
-        document.getElementById('site-content').classList.add('cookies-accepted');
-        document.getElementById('cookie-banner').style.display = 'none';
-    }
-
-    function toggleSettings() {
-        const settings = document.getElementById('cookie-settings');
-        settings.style.display = settings.style.display === 'none' ? 'block' : 'none';
-    }
-
-    function saveSettings() {
-        document.getElementById('site-content').classList.add('cookies-accepted');
-        document.getElementById('cookie-banner').style.display = 'none';
-    }
-</script>
-
 </body>
 </html>
+
