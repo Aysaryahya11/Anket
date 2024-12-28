@@ -1,228 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inspired Webpage</title>
+    <title>Anket</title>
     <style>
-        :root {
-            --colorWhite: #fff;
-            --colorNeutralCool: #f3f1e7;
-            --colorGreenStarbucks: #1e3932;
-            --colorBlack: #000;
-            --colorTextBackground: #d4e9e2;
-            --textSize2: 1.4rem;
-            --lineHeightNormal: 1.5;
-            --space-3: 1.6rem;
-            --space-6: 4rem;
-        }
-
         body {
-            margin: 0;
-            font-family: SoDoSans, Helvetica Neue, Helvetica, Arial, sans-serif;
-            background-color: var(--colorWhite);
-            color: var(--colorBlack);
-            font-size: var(--textSize2);
-            line-height: var(--lineHeightNormal);
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--space-3) var(--space-6);
-            background-color: var(--colorGreenStarbucks);
-            color: var(--colorWhite);
-        }
-
-        header .logo {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
-        }
-
-        nav ul li {
-            margin-left: var(--space-3);
-        }
-
-        nav ul li a {
-            color: var(--colorWhite);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .hero {
-            background-image: url('https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-96387.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 600px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--colorWhite);
-            font-size: 3.6rem;
-            font-weight: bold;
-        }
-
-        .content {
-            padding: var(--space-6);
-            text-align: center;
-        }
-
-        .content h1 {
-            font-size: 2.8rem;
-            color: var(--colorGreenStarbucks);
-        }
-
-        .content p {
-            font-size: 1.6rem;
-            margin: 2rem 0;
-        }
-
-        .columns {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-6);
-            padding: var(--space-6);
-        }
-
-        .column {
-            display: flex;
-            align-items: stretch;
-            background-color: var(--colorNeutralCool);
-            border-radius: 12px;
-            overflow: hidden;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
         }
-
-        @media (min-width: 768px) {
-            .columns {
-                grid-template-columns: 1fr;
-            }
-
-            .column {
-                flex-direction: row;
-            }
-
-            .column img {
-                flex: 1;
-                width: 100%;
-                max-width: 50%;
-                height: auto;
-                object-fit: cover;
-            }
-
-            .column .text {
-                flex: 1;
-                max-width: 50%;
-                padding: var(--space-3);
-                background-color: var(--colorTextBackground);
-                color: var(--colorBlack);
-                box-sizing: border-box;
-            }
-        }
-
-        .column img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .column .text {
-            width: 100%;
-            padding: var(--space-3);
-            background-color: var(--colorTextBackground);
-            color: var(--colorBlack);
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            margin: 20px;
             box-sizing: border-box;
         }
-
-        .column .text h2 {
-            margin: 0 0 10px;
-            font-size: 2rem;
-            color: var(--colorGreenStarbucks);
+        .question {
+            margin: 15px 0;
         }
-
-        .column .text p {
-            margin: 0;
-            font-size: 1.4rem;
+        label {
+            display: block;
+            margin-bottom: 5px;
         }
-
-        .footer {
-            background-color: var(--colorBlack);
-            color: var(--colorWhite);
-            padding: var(--space-6);
-            text-align: center;
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
-
-        .footer a {
-            color: var(--colorGreenStarbucks);
-            text-decoration: none;
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">My Inspired Website</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="hero">
-        Welcome to Our Website
+    <div class="container">
+        <h1>Ankete Hoş Geldiniz</h1>
+        <form id="questionnaire">
+            <div class="question">
+                <label for="age">Yaşınız:</label>
+                <select id="age" name="age">
+                    <option value="18-25">18-25</option>
+                    <option value="26-35">26-35</option>
+                    <option value="36-45">36-45</option>
+                    <option value="46-60">46-60</option>
+                    <option value="60+">60+</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="gender">Cinsiyetiniz:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Erkek</option>
+                    <option value="female">Kadın</option>
+                    <option value="other">Diğer</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="education">Eğitim Seviyeniz:</label>
+                <select id="education" name="education">
+                    <option value="high-school">Lise</option>
+                    <option value="bachelor">Lisans</option>
+                    <option value="master">Yüksek Lisans</option>
+                    <option value="phd">Doktora</option>
+                </select>
+            </div>
+            <button type="button" class="btn" onclick="redirectToSite()">Tamamla</button>
+        </form>
     </div>
 
-    <div class="content">
-        <h1>Discover Our Offerings</h1>
-        <p>We provide high-quality products and services designed to delight you. Explore our menu and find your favorites!</p>
-    </div>
-
-    <div class="columns">
-        <div class="column">
-            <img src="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-96387.jpg" alt="Reward Tiers">
-            <div class="text">
-                <h2>Column 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
-        <div class="column">
-            <img src="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-96033.jpg" alt="Rewards Details">
-            <div class="text">
-                <h2>Column 2</h2>
-                <p>Quisque sit amet est et sapien ullamcorper pharetra.</p>
-            </div>
-        </div>
-        <div class="column">
-            <img src="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-95586.jpg" alt="Rewards Card">
-            <div class="text">
-                <h2>Column 3</h2>
-                <p>Vestibulum volutpat pretium libero, ut cursus arcu.</p>
-            </div>
-        </div>
-        <div class="column">
-            <img src="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-95387.jpg" alt="Bonus Stars">
-            <div class="text">
-                <h2>Column 4</h2>
-                <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <p>&copy; 2024 My Inspired Website. All rights reserved. <a href="#">Privacy Policy</a></p>
-    </footer>
+    <script>
+        function redirectToSite() {
+            const urls = [
+                "https://aysaryahya11.github.io/starbucks/",
+                "https://aysaryahya11.github.io/starbucks/",
+                "https://aysaryahya11.github.io/starbucks/"
+            ];
+            const randomUrl = urls[Math.floor(Math.random() * urls.length)];
+            window.location.href = randomUrl;
+        }
+    </script>
 </body>
 </html>
-
